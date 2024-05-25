@@ -4,13 +4,5 @@ import com.capgemini.wsb.dto.PatientTO;
 
 import java.util.List;
 
-public interface PatientService
-{
-    public PatientTO findById(final Long id);
-
-    public List<PatientTO> findAll();
-
-    public PatientTO deleteByID(final Long id);
-
-    void deleteById(Long patientId);
+public interface PatientService{
 }
