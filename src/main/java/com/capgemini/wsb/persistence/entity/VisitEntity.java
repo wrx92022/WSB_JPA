@@ -32,9 +32,11 @@ public class VisitEntity {
 	public VisitEntity() {
 	}
 
-	public VisitEntity(String description, LocalDateTime time) {
+	public VisitEntity(String description, LocalDateTime time, PatientEntity patient, DoctorEntity doctor) {
 		this.description = description;
 		this.time = time;
+		this.patient = patient;
+		this.doctor = doctor;
 	}
 
 	public Long getId() {
@@ -60,5 +62,13 @@ public class VisitEntity {
 	public void setTime(LocalDateTime time) {
 		this.time = time;
 	}
+
+	public PatientEntity getPatient() {return patient;}
+
+	public void setPatient(PatientEntity patient) {this.patient = patient;}
+
+	public DoctorEntity getDoctor() {return doctor;}
+
+	public void setDoctor(DoctorEntity doctor) { this.doctor = doctor; }
 
 }
