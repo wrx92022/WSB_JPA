@@ -4,8 +4,8 @@ com\capgemini\wsb\persistence\dao\impl\AbstractDao.class
 com\capgemini\wsb\mapper\PatientMapper.class
 com\capgemini\wsb\dto\AddressTO.class
 com\capgemini\wsb\persistence\repository\PatientRepository.class
-com\capgemini\wsb\rest\AddressController.class
 com\capgemini\wsb\persistence\repository\MedicalTreatmentRepository.class
+com\capgemini\wsb\service\impl\PatientServiceImpl.class
 com\capgemini\wsb\persistence\dao\impl\AddressDaoImpl.class
 com\capgemini\wsb\service\AddressService.class
 com\capgemini\wsb\persistence\dao\PatientDao.class
@@ -14,8 +14,6 @@ com\capgemini\wsb\persistence\entity\DoctorEntity.class
 com\capgemini\wsb\persistence\enums\Specialization.class
 com\capgemini\wsb\mapper\AddressMapper.class
 com\capgemini\wsb\service\PatientService.class
-com\capgemini\wsb\rest\exception\EntityNotFoundException.class
-com\capgemini\wsb\rest\exception\advise\EntityNotFoundAdvise.class
 com\capgemini\wsb\persistence\repository\DoctorRepository.class
 com\capgemini\wsb\WsbJpaApplication.class
 com\capgemini\wsb\service\impl\AddressServiceImpl.class

@@ -3,6 +3,7 @@ package com.capgemini.wsb.persistance.dao;
 import com.capgemini.wsb.persistence.dao.PatientDao;
 import com.capgemini.wsb.persistence.dao.Dao;
 import com.capgemini.wsb.persistence.entity.PatientEntity;
+import com.capgemini.wsb.persistence.repository.PatientRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -21,6 +23,8 @@ public class PatientDaoTest
 {
     @Autowired
     private PatientDao patientDao;
+    @Autowired
+    private PatientRepository patientRepository;
 
     @Transactional
     @Test
@@ -81,5 +85,21 @@ public class PatientDaoTest
         assertThat(removed).isNull();
     }
 
+    /*
 
+    @Transactional
+    @Test
+    public void testFindPatientOlderThanX() {
+
+        // given
+        PatientEntity patientEntity = patientDao.findOne(1L);
+        PatientEntity patientEntity1= patientDao.findOne(2L);
+        PatientEntity patientEntity2= patientDao.findOne(3L);
+        // when
+        List<PatientEntity> list = patientRepository.findPatientsOlderThanX();
+
+        // then
+        assertThat(list.size()).isEqualTo(2);
+
+        */
 }

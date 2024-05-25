@@ -1,10 +1,8 @@
 C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\persistence\repository\VisitRepository.java
-C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\rest\exception\advise\EntityNotFoundAdvise.java
 C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\persistence\dao\Dao.java
 C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\persistence\entity\MedicalTreatmentEntity.java
 C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\persistence\dao\AddressDao.java
 C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\WsbJpaApplication.java
-C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\rest\AddressController.java
 C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\persistence\dao\PatientDao.java
 C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\mapper\AddressMapper.java
 C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\persistence\enums\TreatmentType.java
@@ -12,7 +10,6 @@ C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\persistence
 C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\service\PatientService.java
 C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\persistence\dao\impl\AbstractDao.java
 C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\service\AddressService.java
-C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\rest\exception\EntityNotFoundException.java
 C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\dto\AddressTO.java
 C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\dto\PatientTO.java
 C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\persistence\entity\AddressEntity.java
@@ -22,6 +19,7 @@ C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\persistence
 C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\persistence\repository\DoctorRepository.java
 C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\persistence\dao\impl\AddressDaoImpl.java
 C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\persistence\dao\impl\PatientDaoImpl.java
+C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\service\impl\PatientServiceImpl.java
 C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\persistence\entity\DoctorEntity.java
 C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\mapper\PatientMapper.java
 C:\Users\Aleksander\Desktop\wsb-jpa1\src\main\java\com\capgemini\wsb\persistence\repository\AddressRepository.java

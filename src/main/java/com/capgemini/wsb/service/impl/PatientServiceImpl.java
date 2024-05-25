@@ -44,4 +44,9 @@ public class PatientServiceImpl implements PatientService
     public void deleteById(Long patientId) {
 
     }
+
+    @Override
+    public List<PatientTO> findPatientOlderThanX(int age) {
+        return List.of();
+    }
 }
