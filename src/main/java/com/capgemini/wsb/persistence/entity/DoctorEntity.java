@@ -42,6 +42,16 @@ public class DoctorEntity {
 	@JoinColumn(name = "address_id", nullable = false)
 	private AddressEntity address;
 
+	// Relacja dwustronna (Patient rodzic)
+	@ManyToMany
+	@JoinTable(
+			name = "LINK DOCTOR/PATIENT",
+			joinColumns = @JoinColumn(name = "doctor_id"),
+			inverseJoinColumns = @JoinColumn(name = "patient_id")
+	)
+
+	private Set<PatientEntity> patients = new HashSet<>();
+
 	public Long getId() {
 		return id;
 	}
