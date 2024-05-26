@@ -2,6 +2,7 @@ package com.capgemini.wsb.dto;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 public class PatientTO implements Serializable {
 

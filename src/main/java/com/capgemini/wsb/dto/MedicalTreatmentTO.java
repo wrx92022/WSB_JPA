@@ -7,9 +7,7 @@ import java.io.Serializable;
 public class MedicalTreatmentTO implements Serializable {
 
     private Long id;
-
     private String description;
-
     private TreatmentType type;
 
     public TreatmentType getType() { return type; }
@@ -23,4 +21,5 @@ public class MedicalTreatmentTO implements Serializable {
     public String getDescription() { return description; }
 
     public void setDescription(String description) { this.description = description; }
+
 }

@@ -37,10 +37,11 @@ public class VisitTO implements Serializable {
 
     public void setPatient_id(Long patient_id) { this.patient_id = patient_id; }
 
-
     public Collection<MedicalTreatmentTO> getMedicalTreatments() {
         return medicalTreatments;
     }
+
+
 
     private DoctorTO doctor;
 

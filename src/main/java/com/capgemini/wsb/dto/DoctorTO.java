@@ -8,26 +8,16 @@ import java.util.Collection;
 public class DoctorTO implements Serializable {
 
     private Long id;
-
     private String firstName;
-
     private String lastName;
-
     private String telephoneNumber;
-
     private String email;
-
     private String doctorNumber;
-
     private Specialization specialization;
-
     private Collection<AddressTO> addresses;
-
     private Collection<VisitTO> visits;
 
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
 
     public void setId(Long id) {
         this.id = id;
@@ -84,8 +74,6 @@ public class DoctorTO implements Serializable {
     public void setAddresses(Collection<AddressTO> addresses) {
         this.addresses = addresses;
     }
-
-
 
     public void setDoctorNumber(String doctorNumber) {
         this.doctorNumber = doctorNumber;
