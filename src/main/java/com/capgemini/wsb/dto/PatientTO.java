@@ -1,8 +1,9 @@
 package com.capgemini.wsb.dto;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class PatientTO {
+public class PatientTO implements Serializable {
 
     private Long id;
     private String firstName;
@@ -12,18 +13,19 @@ public class PatientTO {
     private String patientNumber;
     private LocalDate dateOfBirth;
     private Integer age;
+    private List<VisitTO> visits;
 
-    public Long getId() {return id;}
+    public Long getId() { return id; }
 
-    public void setId(Long id) {this.id = id;}
+    public void setId(Long id) { this.id = id; }
 
-    public String getFirstName() {return firstName;}
+    public String getFirstName() { return firstName; }
 
-    public void setFirstName(String firstName) {this.firstName = firstName;}
+    public void setFirstName(String firstName) { this.firstName = firstName; }
 
-    public String getLastName() {return lastName;}
+    public String getLastName() { return lastName; }
 
-    public void setLastName(String lastName) {this.lastName = lastName;}
+    public void setLastName(String lastName) { this.lastName = lastName; }
 
     public String getTelephoneNumber() { return telephoneNumber; }
 
@@ -44,4 +46,8 @@ public class PatientTO {
     public Integer getAge() { return age; }
 
     public void setAge(Integer age) { this.age = age; }
+
+    public List<VisitTO> getVisits() { return visits; }
+
+    public void setVisits(List<VisitTO> visits) { this.visits = visits; }
 }
