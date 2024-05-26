@@ -5,13 +5,12 @@ import com.capgemini.wsb.persistence.entity.VisitEntity;
 
 import java.util.List;
 
-public interface PatientDao extends Dao<PatientEntity, Long>
-{
+public interface PatientDao extends Dao<PatientEntity, Long> {
     List<PatientEntity> findByLastName(String lastName);
 
     List<PatientEntity> findByVisitsCountGreaterThan(Long visitsCount);
 
-    List<PatientEntity> findByHeightCountGreaterThan(Integer ageCount);
+    List<PatientEntity> findByHeightGreaterThan(Integer height);
 
     List<VisitEntity> findVisitsByPatientId(Long id);
 }

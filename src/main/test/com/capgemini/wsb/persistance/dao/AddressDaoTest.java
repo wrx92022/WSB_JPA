@@ -13,8 +13,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class AddressDaoTest
-{
+public class AddressDaoTest {
+
     @Autowired
     private AddressDao addressDao;
 
@@ -70,6 +70,4 @@ public class AddressDaoTest
         final AddressEntity removed = addressDao.findOne(saved.getId());
         assertThat(removed).isNull();
     }
-
-
 }

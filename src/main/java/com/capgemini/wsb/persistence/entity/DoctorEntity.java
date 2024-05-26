@@ -5,7 +5,6 @@ import com.capgemini.wsb.persistence.enums.Specialization;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -34,25 +33,14 @@ public class DoctorEntity {
 	@Enumerated(EnumType.STRING)
 	private Specialization specialization;
 
-
-	/* Relacja dwustronna, Doctor jest właścicielem relacji */
+	// relacja dwustronna (Doctor rodzic)
 	@OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)
 	private Set<VisitEntity> visits = new HashSet<>();
 
-	/* Relacja jednostronna od strony Doctor */
+	// relacja jednostronna (Doctor rodzic)
 	@ManyToOne
 	@JoinColumn(name = "address_id", nullable = false)
 	private AddressEntity address;
-
-	/* Relacja dwustronna, właściciel Patient on zarządza.*/
-	@ManyToMany
-	@JoinTable(
-			name = "doctor_patient",
-			joinColumns = @JoinColumn(name = "doctor_id"),
-			inverseJoinColumns = @JoinColumn(name = "patient_id")
-	)
-	private Set<PatientEntity> patients = new HashSet<>();
-
 
 	public Long getId() {
 		return id;
@@ -110,21 +98,22 @@ public class DoctorEntity {
 		this.specialization = specialization;
 	}
 
-
-
 	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
 	@JoinTable(
-			name = "DOCTOR_TO_ADDRESS",
-			joinColumns = @JoinColumn(name = "DOCTOR_ID"),
-			inverseJoinColumns = @JoinColumn(name = "ADDRESS_ID")
+			name = "LINK DOCTOR/ADDRESS",
+			joinColumns = @JoinColumn(name = "doctor_id"),
+			inverseJoinColumns = @JoinColumn(name = "address_id")
 	)
-	private Collection<AddressEntity> addresses;
+
+	public Collection<AddressEntity> addresses;
 
 	public Collection<AddressEntity> getAddresses() {
 		return addresses;
 	}
 
-	public void setAddresses(Collection<AddressEntity> addresses) { this.addresses = addresses; }
+	public void setAddresses(Collection<AddressEntity> addresses) {
+		this.addresses = addresses;
+	}
 
 	public Collection<VisitEntity> getVisits() {
 		return visits;

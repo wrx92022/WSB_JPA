@@ -19,7 +19,6 @@ import java.util.stream.Collectors;
 @Transactional
 public class PatientServiceImpl implements PatientService {
 
-
     private final PatientDao patientDao;
 
     @Autowired
@@ -27,16 +26,15 @@ public class PatientServiceImpl implements PatientService {
         this.patientDao = patientDao;
     }
 
-
-    @Override
-    public List<VisitTO> findVisitsByPatientId(Long id) {
-        return patientDao.findVisitsByPatientId(id).stream().map(VisitMapper::mapToTO).collect(Collectors.toList());
-    }
-
     @Override
     public List<PatientTO> findAll() {
         final List<PatientEntity> entities = patientDao.findAll();
         return entities.stream().map(PatientMapper::mapToTO).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<VisitTO> findVisitsByPatientId(Long id) {
+        return patientDao.findVisitsByPatientId(id).stream().map(VisitMapper::mapToTO).collect(Collectors.toList());
     }
 
     @Override

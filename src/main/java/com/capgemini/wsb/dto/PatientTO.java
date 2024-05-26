@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
-public class PatientTO implements Serializable {
+public class PatientTO implements Serializable{
 
     private Long id;
     private String firstName;
@@ -13,7 +13,7 @@ public class PatientTO implements Serializable {
     private String email;
     private String patientNumber;
     private LocalDate dateOfBirth;
-    private Integer age;
+    private Integer height;
     private List<VisitTO> visits;
 
     public Long getId() { return id; }
@@ -44,9 +44,9 @@ public class PatientTO implements Serializable {
 
     public void setDateOfBirth(LocalDate dateOfBirth) { this.dateOfBirth = dateOfBirth; }
 
-    public Integer getAge() { return age; }
+    public Integer getHeight() { return height; }
 
-    public void setAge(Integer age) { this.age = age; }
+    public void setHeight(Integer height) { this.height = height; }
 
     public List<VisitTO> getVisits() { return visits; }
 

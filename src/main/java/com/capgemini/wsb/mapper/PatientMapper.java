@@ -2,15 +2,13 @@ package com.capgemini.wsb.mapper;
 
 import com.capgemini.wsb.dto.PatientTO;
 import com.capgemini.wsb.persistence.entity.PatientEntity;
-
 import java.util.stream.Collectors;
 
 public final class PatientMapper {
 
     public static PatientTO mapToTO(final PatientEntity patientEntity)
     {
-        if (patientEntity == null)
-        {
+        if (patientEntity == null) {
             return null;
         }
 
@@ -23,23 +21,18 @@ public final class PatientMapper {
         patientTO.setEmail(patientEntity.getEmail());
         patientTO.setPatientNumber(patientEntity.getPatientNumber());
         patientTO.setDateOfBirth(patientEntity.getDateOfBirth());
-        patientTO.setAge(patientEntity.getHeight());
+        patientTO.setHeight(patientEntity.getHeight());
 
-        // Mapowanie wizyt
         if (patientEntity.getVisits() != null) {
             patientTO.setVisits(patientEntity.getVisits().stream()
                     .map(VisitMapper::mapToTO)
                     .collect(Collectors.toList()));
         }
-
         return patientTO;
-
     }
 
-    public static PatientEntity mapToEntity(final PatientTO patientTO)
-    {
-        if(patientTO == null)
-        {
+    public static PatientEntity mapToEntity(final PatientTO patientTO) {
+        if(patientTO == null) {
             return null;
         }
 
@@ -52,11 +45,8 @@ public final class PatientMapper {
         patientEntity.setEmail(patientTO.getEmail());
         patientEntity.setPatientNumber(patientTO.getPatientNumber());
         patientEntity.setDateOfBirth(patientTO.getDateOfBirth());
-        patientEntity.setHeight(patientTO.getAge());
+        patientEntity.setHeight(patientTO.getHeight());
 
         return patientEntity;
-
     }
-
-
 }

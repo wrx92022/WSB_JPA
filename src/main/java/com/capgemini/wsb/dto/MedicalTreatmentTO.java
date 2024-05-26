@@ -10,10 +10,6 @@ public class MedicalTreatmentTO implements Serializable {
     private String description;
     private TreatmentType type;
 
-    public TreatmentType getType() { return type; }
-
-    public void setType(TreatmentType type) { this.type = type; }
-
     public Long getId() { return id; }
 
     public void setId(Long id) { this.id = id; }
@@ -22,4 +18,7 @@ public class MedicalTreatmentTO implements Serializable {
 
     public void setDescription(String description) { this.description = description; }
 
+    public TreatmentType getType() { return type; }
+
+    public void setType(TreatmentType type) { this.type = type; }
 }

@@ -53,5 +53,4 @@ public class MedicalTreatmentEntity {
 	public void setType(TreatmentType type) {
 		this.type = type;
 	}
-
 }

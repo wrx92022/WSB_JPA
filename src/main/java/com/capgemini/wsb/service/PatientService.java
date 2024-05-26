@@ -8,10 +8,7 @@ import java.util.List;
 public interface PatientService {
 
     PatientTO findById(final Long id);
-
     List<PatientTO> findAll();
     List<VisitTO> findVisitsByPatientId(final Long id);
-
     void deleteById(final Long id);
-
 }

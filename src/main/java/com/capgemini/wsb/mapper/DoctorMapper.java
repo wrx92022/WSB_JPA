@@ -7,13 +7,10 @@ import com.capgemini.wsb.persistence.entity.DoctorEntity;
 
 import java.util.Collections;
 import java.util.stream.Collectors;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-
 public final class DoctorMapper {
-
 
     public static DoctorTO mapToTO(final DoctorEntity doctorEntity)
     {
@@ -30,26 +27,21 @@ public final class DoctorMapper {
 
         final Collection<AddressTO> addresses = new ArrayList<>(Collections.emptyList());
 
-        if (doctorEntity.getAddresses() != null)
-        {
+        if (doctorEntity.getAddresses() != null){
             addresses.addAll(doctorEntity.getAddresses().stream()
                     .map(AddressMapper::mapToTO)
                     .collect(Collectors.toList()));
         }
         doctorTO.setAddresses(addresses);
 
-
         final Collection<VisitTO> visits = new ArrayList<>(Collections.emptyList());
 
-        if (doctorEntity.getVisits() != null)
-        {
+        if (doctorEntity.getVisits() != null){
             visits.addAll(doctorEntity.getVisits().stream()
                     .map(VisitMapper::mapToTO)
                     .collect(Collectors.toList()));
         }
         doctorTO.setVisits(visits);
-
         return doctorTO;
     }
-
 }

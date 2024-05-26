@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Collection;
 
-public class VisitTO implements Serializable {
+public class VisitTO implements Serializable{
 
     private Long id;
     private String description;
@@ -12,7 +12,8 @@ public class VisitTO implements Serializable {
     private Long doctor_id;
     private Long medical_treatment_id;
     private Long patient_id;
-
+    private DoctorTO doctor;
+    private PatientTO patient;
     private Collection<MedicalTreatmentTO> medicalTreatments;
 
     public Long getId() { return id; }
@@ -37,26 +38,18 @@ public class VisitTO implements Serializable {
 
     public void setPatient_id(Long patient_id) { this.patient_id = patient_id; }
 
-    public Collection<MedicalTreatmentTO> getMedicalTreatments() {
-        return medicalTreatments;
-    }
-
-
-
-    private DoctorTO doctor;
-
-    private PatientTO patient;
+    public Collection<MedicalTreatmentTO> getMedicalTreatments() { return medicalTreatments; }
 
     public DoctorTO getDoctor() {
         return doctor;
     }
 
-    public PatientTO getPatient() {
-        return patient;
-    }
-
     public void setDoctor(DoctorTO doctor) {
         this.doctor = doctor;
+    }
+
+    public PatientTO getPatient() {
+        return patient;
     }
 
     public void setPatient(PatientTO patient) {

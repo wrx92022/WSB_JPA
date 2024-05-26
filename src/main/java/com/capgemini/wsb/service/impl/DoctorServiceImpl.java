@@ -19,15 +19,8 @@ public class DoctorServiceImpl implements DoctorService {
     private final DoctorDao doctorDao;
 
     @Autowired
-    public DoctorServiceImpl(DoctorDao pDoctorDao)
-    {
+    public DoctorServiceImpl(DoctorDao pDoctorDao) {
         doctorDao = pDoctorDao;
-    }
-
-    @Override
-    public DoctorTO findById(final Long id) {
-        final DoctorEntity entity = doctorDao.findOne(id);
-        return DoctorMapper.mapToTO(entity);
     }
 
     @Override
@@ -36,4 +29,9 @@ public class DoctorServiceImpl implements DoctorService {
         return entities.stream().map(DoctorMapper::mapToTO).collect(Collectors.toList());
     }
 
+    @Override
+    public DoctorTO findById(final Long id) {
+        final DoctorEntity entity = doctorDao.findOne(id);
+        return DoctorMapper.mapToTO(entity);
+    }
 }

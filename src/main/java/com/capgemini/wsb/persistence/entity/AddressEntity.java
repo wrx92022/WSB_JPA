@@ -21,8 +21,7 @@ public class AddressEntity {
 	@Column(nullable = false)
 	private String postalCode;
 
-	public AddressEntity() {
-	}
+	public AddressEntity() {}
 
 	public AddressEntity(String city, String addressLine1, String addressLine2, String postalCode) {
 		this.city = city;
@@ -70,5 +69,4 @@ public class AddressEntity {
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
 	}
-
 }

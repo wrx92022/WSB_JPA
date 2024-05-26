@@ -1,6 +1,5 @@
 package com.capgemini.wsb.persistance.dao;
 
-
 import com.capgemini.wsb.persistence.dao.PatientDao;
 import com.capgemini.wsb.persistence.entity.PatientEntity;
 import org.junit.Test;
@@ -21,11 +20,10 @@ public class PatientDaoTest {
     @Autowired
     private PatientDao patientDao;
 
-
     @Transactional
     @Test
     public void testFindPatientByLastName() {
-
+        // given
         // when
         List<PatientEntity> patientEntity = patientDao.findByLastName("Wiśniewska");
 
@@ -36,11 +34,11 @@ public class PatientDaoTest {
     @Transactional
     @Test
     public void testFindPatientsByGreaterCounterVisits() {
-
+        // given
         // When
         List<PatientEntity> patientEntity = patientDao.findByVisitsCountGreaterThan(1L);
 
-        // Then
+        // then
         assertThat(patientEntity.size()).isEqualTo(2);
 
     }
@@ -48,12 +46,11 @@ public class PatientDaoTest {
     @Transactional
     @Test
     public void testFindPatientsByHeightGreaterThan() {
-
+        // given
         // when
-        List<PatientEntity> patientEntity = patientDao.findByHeightCountGreaterThan(185);
+        List<PatientEntity> patientEntity = patientDao.findByHeightGreaterThan(185);
 
         // then
         assertThat(patientEntity.size()).isEqualTo(2);
     }
-
 }

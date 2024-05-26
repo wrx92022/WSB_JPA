@@ -19,15 +19,15 @@ public class VisitEntity {
 	private LocalDateTime time;
 
 	@OneToMany(mappedBy = "visit")
-	private List<MedicalTreatmentEntity> medicalTreatments;		//relacja jeden do wielu (rodzic)
+	private List<MedicalTreatmentEntity> medicalTreatments;		//relacja jeden do wielu (Visit rodzic)
 
 	@ManyToOne
 	@JoinColumn(name = "doctor_id")
-	private DoctorEntity doctor;	// relacja wielu do jednego (dziecko)
+	private DoctorEntity doctor;	// relacja wielu do jednego (Visit dziecko)
 
 	@ManyToOne
 	@JoinColumn(name = "patient_id")
-	private PatientEntity patient;	// relacja wielu do jednego (dziecko)
+	private PatientEntity patient;	// relacja wielu do jednego (Visit dziecko)
 
 	public VisitEntity() {
 	}
@@ -70,5 +70,4 @@ public class VisitEntity {
 	public DoctorEntity getDoctor() {return doctor;}
 
 	public void setDoctor(DoctorEntity doctor) { this.doctor = doctor; }
-
 }

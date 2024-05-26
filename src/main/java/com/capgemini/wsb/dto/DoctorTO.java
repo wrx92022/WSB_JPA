@@ -59,6 +59,10 @@ public class DoctorTO implements Serializable {
         return doctorNumber;
     }
 
+    public void setDoctorNumber(String doctorNumber) {
+        this.doctorNumber = doctorNumber;
+    }
+
     public Collection<VisitTO> getVisits() {
         return visits;
     }
@@ -75,10 +79,6 @@ public class DoctorTO implements Serializable {
         this.addresses = addresses;
     }
 
-    public void setDoctorNumber(String doctorNumber) {
-        this.doctorNumber = doctorNumber;
-    }
-
     public Specialization getSpecialization() {
         return specialization;
     }
@@ -86,6 +86,4 @@ public class DoctorTO implements Serializable {
     public void setSpecialization(Specialization specialization) {
         this.specialization = specialization;
     }
-
-
 }
