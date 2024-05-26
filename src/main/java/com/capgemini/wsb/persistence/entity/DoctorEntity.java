@@ -3,7 +3,10 @@ package com.capgemini.wsb.persistence.entity;
 import com.capgemini.wsb.persistence.enums.Specialization;
 
 import javax.persistence.*;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "DOCTOR")
@@ -31,24 +34,25 @@ public class DoctorEntity {
 	@Enumerated(EnumType.STRING)
 	private Specialization specialization;
 
-	@OneToMany(mappedBy = "doctor")
-	private List<VisitEntity> visits;		// relacja jeden do wielu (rodzic)
 
-	@OneToOne
-	@JoinColumn(name = "address_id")
-	private AddressEntity address;		// relacja jeden do jeden
+	/* Relacja dwustronna, Doctor jest właścicielem relacji */
+	@OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)
+	private Set<VisitEntity> visits = new HashSet<>();
 
-	public DoctorEntity() {
-	}
+	/* Relacja jednostronna od strony Doctor */
+	@ManyToOne
+	@JoinColumn(name = "address_id", nullable = false)
+	private AddressEntity address;
 
-	public DoctorEntity(String firstName, String lastName, String telephoneNumber, String email, String doctorNumber, Specialization specialization) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.telephoneNumber = telephoneNumber;
-		this.email = email;
-		this.doctorNumber = doctorNumber;
-		this.specialization = specialization;
-	}
+	/* Relacja dwustronna, właściciel Patient on zarządza.*/
+	@ManyToMany
+	@JoinTable(
+			name = "doctor_patient",
+			joinColumns = @JoinColumn(name = "doctor_id"),
+			inverseJoinColumns = @JoinColumn(name = "patient_id")
+	)
+	private Set<PatientEntity> patients = new HashSet<>();
+
 
 	public Long getId() {
 		return id;
@@ -106,4 +110,23 @@ public class DoctorEntity {
 		this.specialization = specialization;
 	}
 
+
+
+	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+	@JoinTable(
+			name = "DOCTOR_TO_ADDRESS",
+			joinColumns = @JoinColumn(name = "DOCTOR_ID"),
+			inverseJoinColumns = @JoinColumn(name = "ADDRESS_ID")
+	)
+	private Collection<AddressEntity> addresses;
+
+	public Collection<AddressEntity> getAddresses() {
+		return addresses;
+	}
+
+	public void setAddresses(Collection<AddressEntity> addresses) { this.addresses = addresses; }
+
+	public Collection<VisitEntity> getVisits() {
+		return visits;
+	}
 }

@@ -1,7 +1,9 @@
 package com.capgemini.wsb.persistence.entity;
 
 import java.time.LocalDate;
-import java.util.List;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -22,7 +24,6 @@ public class PatientEntity {
 	@Column(nullable = false)
 	private String telephoneNumber;
 
-	@Column
 	private String email;
 
 	@Column(nullable = false)
@@ -31,28 +32,32 @@ public class PatientEntity {
 	@Column(nullable = false)
 	private LocalDate dateOfBirth;
 
-	@Column(nullable = false)
-	private int age;
+	private Integer age;
 
-	@OneToMany(mappedBy = "patient")
-	private List<VisitEntity> visits;		// relacja jeden do wielu (rodzic)
 
-	@OneToOne
-	@JoinColumn(name = "address_id")
+	/* Relacja jeden do wielu ze strony, czyli jednostronna od strony pacjenta */
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "patient", orphanRemoval = true)
+	private Set<VisitEntity> visits = new HashSet<>();
+
+	/* Relacja wiele do jednego, czyli jednostronna od strony pacjenta */
+	@ManyToOne
+	@JoinColumn(name = "address_id", nullable = false)
 	private AddressEntity address;
 
-	public PatientEntity() {
-	}
+	/* Relacja dwustronna, wiele do wielu */
+	@ManyToMany(mappedBy = "patients")
+	private Set<DoctorEntity> doctors = new HashSet<>();
 
-	public PatientEntity(String firstName, String lastName, String telephoneNumber, String email, String patientNumber, LocalDate dateOfBirth, int age) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.telephoneNumber = telephoneNumber;
-		this.email = email;
-		this.patientNumber = patientNumber;
-		this.dateOfBirth = dateOfBirth;
-		this.age = age;
-	}
+
+	/* Relacja dwustronna, wiele do wielu */
+	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+	@JoinTable(
+			name = "PATIENT_TO_ADDRESS",
+			joinColumns = @JoinColumn(name = "PATIENT_ID"),
+			inverseJoinColumns = @JoinColumn(name = "ADDRESS_ID")
+	)
+
+	private Collection<AddressEntity> addresses;
 
 	public Long getId() {
 		return id;
@@ -110,9 +115,19 @@ public class PatientEntity {
 		this.dateOfBirth = dateOfBirth;
 	}
 
-	public int getAge() { return age; }
+	public Integer getAge() {
+		return age;
+	}
 
-	public void setAge(int age) { this.age = age; }
+	public void setAge(Integer age) {
+		this.age = age;
+	}
 
+	public void setVisits(Set<VisitEntity> visits) {
+		this.visits = visits;
+	}
 
+	public Set<VisitEntity> getVisits(){
+		return visits;
+	}
 }
