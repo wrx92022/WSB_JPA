@@ -14,20 +14,20 @@ INSERT INTO doctor (first_name, last_name, telephone_number, email, doctor_numbe
                                                                                                        ('Karolina', 'Dąbrowska', '555666777', 'karolina.dabrowska@example.com', '789', 'GP', 7),
                                                                                                        ('Marcin', 'Lewandowski', '888999000', 'marcin.lewandowski@example.com', '012', 'DERMATOLOGIST', 1);
 
-INSERT INTO patient (first_name, last_name, telephone_number, email, patient_number, date_of_birth, age, address_id) VALUES
-                                                                                                        ('Aleksandra', 'Wiśniewska', '111222333', 'aleksandra.wisniewska@example.com', '789', '1990-05-15', 30, 1),
-                                                                                                        ('Piotr', 'Kowalczyk', '444555666', 'piotr.kowalczyk@example.com', '012', '1985-10-20', 35, 2),
-                                                                                                        ('Adam', 'Nowak', '111222333', 'adam.nowak@example.com', '111', '1980-03-10', 40, 3),
-                                                                                                        ('Katarzyna', 'Kowalczyk', '444555666', 'katarzyna.kowalczyk@example.com', '222', '1992-07-20', 28, 4),
-                                                                                                        ('Michał', 'Wójcik', '777888999', 'michal.wojcik@example.com', '333', '1975-12-05', 45, 5),
-                                                                                                        ('Monika', 'Kamińska', '123456789', 'monika.kaminska@example.com', '444', '1988-09-15', 32, 6),
-                                                                                                        ('Paweł', 'Zając', '999888777', 'pawel.zajac@example.com', '555', '1996-04-25', 24, 8);
+INSERT INTO patient (first_name, last_name, telephone_number, email, patient_number, date_of_birth, height, address_id) VALUES
+                                                                                                        ('Aleksandra', 'Wiśniewska', '111222333', 'aleksandra.wisniewska@example.com', '789', '1990-05-15', 160, 1),
+                                                                                                        ('Piotr', 'Kowalczyk', '444555666', 'piotr.kowalczyk@example.com', '012', '1985-10-20', 185, 2),
+                                                                                                        ('Adam', 'Nowak', '111222333', 'adam.nowak@example.com', '111', '1980-03-10', 190, 3),
+                                                                                                        ('Katarzyna', 'Kowalczyk', '444555666', 'katarzyna.kowalczyk@example.com', '222', '1992-07-20', 168, 4),
+                                                                                                        ('Michał', 'Wójcik', '777888999', 'michal.wojcik@example.com', '333', '1975-12-05', 205, 5),
+                                                                                                        ('Monika', 'Kamińska', '123456789', 'monika.kaminska@example.com', '444', '1988-09-15', 178, 6),
+                                                                                                        ('Paweł', 'Zając', '999888777', 'pawel.zajac@example.com', '555', '1996-04-25', 181, 8);
 
 INSERT INTO visit (description, time, doctor_id, patient_id) VALUES
                                                                  ('Badanie kontrolne', '2024-05-25 10:00:00', 1, 1),
                                                                  ('Wizyta pierwszego kontaktu', '2024-05-26 14:30:00', 2, 2),
-                                                                 ('Konsultacja neurologiczna', '2024-05-28 09:15:00', 3, 3),
-                                                                 ('Badanie kardiologiczne', '2024-05-30 11:30:00', 4, 4),
+                                                                 ('Konsultacja neurologiczna', '2024-05-28 09:15:00', 3, 2),
+                                                                 ('Badanie kardiologiczne', '2024-05-30 11:30:00', 4, 1),
                                                                  ('Kontrola ogólna', '2024-06-02 14:00:00', 1, 5);
 
 INSERT INTO medical_treatment (description, type, visit_id) VALUES

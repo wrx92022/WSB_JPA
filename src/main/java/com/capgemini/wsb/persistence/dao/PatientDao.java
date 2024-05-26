@@ -11,7 +11,7 @@ public interface PatientDao extends Dao<PatientEntity, Long>
 
     List<PatientEntity> findByVisitsCountGreaterThan(Long visitsCount);
 
-    List<PatientEntity> findByAgeCountGreaterThan(Integer ageCount);
+    List<PatientEntity> findByHeightCountGreaterThan(Integer ageCount);
 
     List<VisitEntity> findVisitsByPatientId(Long id);
 }

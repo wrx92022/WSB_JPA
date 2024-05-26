@@ -38,19 +38,19 @@ public class PatientDaoTest {
     public void testFindPatientsByGreaterCounterVisits() {
 
         // When
-        List<PatientEntity> patientEntity = patientDao.findByVisitsCountGreaterThan(0L);
+        List<PatientEntity> patientEntity = patientDao.findByVisitsCountGreaterThan(1L);
 
         // Then
-        assertThat(patientEntity.size()).isEqualTo(3);
+        assertThat(patientEntity.size()).isEqualTo(2);
 
     }
 
     @Transactional
     @Test
-    public void testFindPatientsByAgeGreaterThan() {
+    public void testFindPatientsByHeightGreaterThan() {
 
         // when
-        List<PatientEntity> patientEntity = patientDao.findByAgeCountGreaterThan(23);
+        List<PatientEntity> patientEntity = patientDao.findByHeightCountGreaterThan(185);
 
         // then
         assertThat(patientEntity.size()).isEqualTo(2);

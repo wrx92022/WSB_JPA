@@ -32,11 +32,11 @@ public class PatientEntity {
 	@Column(nullable = false)
 	private LocalDate dateOfBirth;
 
-	private Integer age;
+	private Integer height;
 
 
 	/* Relacja jeden do wielu ze strony, czyli jednostronna od strony pacjenta */
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "patient", orphanRemoval = true)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "patient")
 	private Set<VisitEntity> visits = new HashSet<>();
 
 	/* Relacja wiele do jednego, czyli jednostronna od strony pacjenta */
@@ -115,12 +115,12 @@ public class PatientEntity {
 		this.dateOfBirth = dateOfBirth;
 	}
 
-	public Integer getAge() {
-		return age;
+	public Integer getHeight() {
+		return height;
 	}
 
-	public void setAge(Integer age) {
-		this.age = age;
+	public void setHeight(Integer height) {
+		this.height = height;
 	}
 
 	public void setVisits(Set<VisitEntity> visits) {

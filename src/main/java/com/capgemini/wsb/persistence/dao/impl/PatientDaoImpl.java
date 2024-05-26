@@ -20,10 +20,10 @@ public class PatientDaoImpl extends AbstractDao<PatientEntity, Long> implements 
     }
 
     @Override
-    public List<PatientEntity> findByAgeCountGreaterThan(Integer ageCount) {
+    public List<PatientEntity> findByHeightCountGreaterThan(Integer height) {
         return entityManager.createQuery("select p from PatientEntity p" +
-                        " where p.age > :ageCount", PatientEntity.class)
-                .setParameter("ageCount", ageCount)
+                        " where p.height > :height", PatientEntity.class)
+                .setParameter("height", height)
                 .getResultList();
     }
 

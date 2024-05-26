@@ -1,7 +1,6 @@
 package com.capgemini.wsb.mapper;
 
 import com.capgemini.wsb.dto.PatientTO;
-import com.capgemini.wsb.dto.PatientTO;
 import com.capgemini.wsb.persistence.entity.PatientEntity;
 
 import java.util.stream.Collectors;
@@ -24,7 +23,7 @@ public final class PatientMapper {
         patientTO.setEmail(patientEntity.getEmail());
         patientTO.setPatientNumber(patientEntity.getPatientNumber());
         patientTO.setDateOfBirth(patientEntity.getDateOfBirth());
-        patientTO.setAge(patientEntity.getAge());
+        patientTO.setAge(patientEntity.getHeight());
 
         // Mapowanie wizyt
         if (patientEntity.getVisits() != null) {
@@ -53,7 +52,7 @@ public final class PatientMapper {
         patientEntity.setEmail(patientTO.getEmail());
         patientEntity.setPatientNumber(patientTO.getPatientNumber());
         patientEntity.setDateOfBirth(patientTO.getDateOfBirth());
-        patientEntity.setAge(patientTO.getAge());
+        patientEntity.setHeight(patientTO.getAge());
 
         return patientEntity;
 
